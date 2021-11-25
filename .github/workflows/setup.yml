@@ -11,7 +11,7 @@ env:
 jobs:
   test:
     name: 'Validate links'
-    runs-on: windows-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
