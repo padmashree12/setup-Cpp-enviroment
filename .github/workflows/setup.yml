@@ -1,7 +1,20 @@
-name: GitHub Actions Demo
-on: [push]
+name: "Setup C++"
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  FORMAT_FILE: README.md
+
 jobs:
-  Explore-GitHub-Actions:
+  test:
+    name: 'Validate links'
     runs-on: ubuntu-latest
     steps:
-      -run bash main.sh
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Validate all links from README.md
+        run: bash main.sh
